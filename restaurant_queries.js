@@ -73,9 +73,8 @@ db.Restaurant.find({grades: {$elemMatch: {grade: "A", score: 11, date: ISODate("
 //ISODate "2014-08-11T00:00:00Z".
 db.Restaurant.find({"grades.1.grade": "A", "grades.1.score": 9, "grades.1.date": ISODate("2014-08-11T00:00:00Z")}, {restaurant_id: 1, name: 1, grades: 1, _id: 0})
 
-// TODO: MIRAR 24 NO FUNCIONE
 //24.Escriu una consulta per trobar el restaurant_id, name, adreça i ubicació geogràfica per a aquells restaurants on el segon element del array coord conté un valor que és més de 42 i fins a 52.
-db.Restaurant.find({"address.coord.1": {$gt:42, $lte: 52}}, {restaurant_id: 1, name: 1, address: 1, "address.coord":1,  _id: 0})
+db.Restaurant.find({"address.coord.1": {$gt:42, $lte: 52}}, {restaurant_id: 1, name: 1, address: 1,  _id: 0})
 
 //25.Escriu una consulta per organitzar el nom dels restaurants en ordre ascendent juntament amb totes les columnes.
 db.Restaurant.find().sort({name: 1})
