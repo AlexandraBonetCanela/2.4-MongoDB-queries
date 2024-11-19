@@ -18,7 +18,7 @@ db.Restaurant.find({"grades.score": {$gt:90}})
 
 db.Restaurant.find({"grades.score": {$gt:80, $lt:100}})
 
-db.Restaurant.find({"address.coord.1": {$lt:-95.754168}})
+db.Restaurant.find({"address.coord.0": {$lt:-95.754168}})
 
 db.Restaurant.find({cuisine: {$ne:"American "}, "grades.score": {$gt: 70}, "address.coord.0": {$lt: -65.754168}})
 

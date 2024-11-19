@@ -28,7 +28,7 @@ db.Restaurant.find({"grades.score": {$gt:90}})
 db.Restaurant.find({"grades.score": {$gt:80, $lt:100}})
 
 //10.Escriu una consulta per trobar els restaurants que es localitzen en valor de latitud menys de -95.754168.
-db.Restaurant.find({"address.coord.1": {$lt:-95.754168}})
+db.Restaurant.find({"address.coord.0": {$lt:-95.754168}})
 
 //11.Escriu una consulta de MongoDB per a trobar els restaurants que no preparen cap cuisine de 'American' i la seva qualificació és superior a 70 i longitud inferior a -65.754168.
 db.Restaurant.find({cuisine: {$ne:"American "}, "grades.score": {$gt: 70}, "address.coord.0": {$lt: -65.754168}})
